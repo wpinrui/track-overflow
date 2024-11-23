@@ -1,0 +1,324 @@
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: No element
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:675:25)
+#1      WidgetController.element (package:flutter_test/src/controller.dart:869:30)
+#2      main.<anonymous closure>.<anonymous closure> (file:///Users/ivan/gh/track_overflow/test/unit/error_handler_service_test.dart:20:43)
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:189:29)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1032:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  should show an error dialog
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+00:04 +8 -1: /Users/ivan/gh/track_overflow/test/unit/error_handler_service_test.dart: ErrorHandlerService should show an error dialog [E]                                                              
+  Test failed. See exception logs above.
+  The test description was: should show an error dialog
+  
+
+To run this test again: /Users/ivan/flutter/bin/cache/dart-sdk/bin/dart test /Users/ivan/gh/track_overflow/test/unit/error_handler_service_test.dart -p vm --plain-name 'ErrorHandlerService should show an error dialog'
+
+00:04 +8 -1: loading /Users/ivan/gh/track_overflow/test/widget/placeholder_screen_test.dart                                                                                                            
+00:04 +8 -1: /Users/ivan/gh/track_overflow/test/widget/placeholder_screen_test.dart: should display welcome message and buttons                                                                        
+00:05 +8 -1: /Users/ivan/gh/track_overflow/test/widget/placeholder_screen_test.dart: should display welcome message and buttons                                                                        
+00:05 +8 -1: /Users/ivan/gh/track_overflow/test/widget/placeholder_screen_test.dart: should display welcome message and buttons                                                                        
+══╡ EXCEPTION CAUGHT BY WIDGETS LIBRARY ╞═══════════════════════════════════════════════════════════
+The following StateError was thrown building PlaceholderScreen(dirty):
+Bad state: GetIt: Object/factory with type PlaybackService is not registered inside GetIt.
+(Did you accidentally do GetIt sl=GetIt.instance(); instead of GetIt sl=GetIt.instance;
+Did you forget to register it?)
+
+The relevant error-causing widget was:
+  PlaceholderScreen PlaceholderScreen:file:///Users/ivan/gh/track_overflow/lib/main.dart:33:19
+
+When the exception was thrown, this was the stack:
+#0      throwIfNot (package:get_it/get_it_impl.dart:14:19)
+#1      _GetItImplementation._findFactoryByNameAndType (package:get_it/get_it_impl.dart:580:5)
+#2      _GetItImplementation.get (package:get_it/get_it_impl.dart:604:29)
+#3      _GetItImplementation.call (package:get_it/get_it_impl.dart:677:12)
+#4      PlaceholderScreen.build (package:track_overflow/main.dart:43:34)
+#5      StatelessElement.build (package:flutter/src/widgets/framework.dart:5687:49)
+#6      ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5617:15)
+#7      Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#8      ComponentElement._firstBuild (package:flutter/src/widgets/framework.dart:5599:5)
+#9      ComponentElement.mount (package:flutter/src/widgets/framework.dart:5593:5)
+...     Normal element mounting (228 frames)
+#237    Element.inflateWidget (package:flutter/src/widgets/framework.dart:4468:16)
+#238    MultiChildRenderObjectElement.inflateWidget (package:flutter/src/widgets/framework.dart:7035:36)
+#239    MultiChildRenderObjectElement.mount (package:flutter/src/widgets/framework.dart:7047:32)
+...     Normal element mounting (463 frames)
+#702    Element.inflateWidget (package:flutter/src/widgets/framework.dart:4468:16)
+#703    Element.updateChild (package:flutter/src/widgets/framework.dart:3957:20)
+#704    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#705    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#706    ProxyElement.update (package:flutter/src/widgets/framework.dart:5946:5)
+#707    _InheritedNotifierElement.update (package:flutter/src/widgets/inherited_notifier.dart:105:11)
+#708    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#709    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#710    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5780:11)
+#711    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#712    StatefulElement.update (package:flutter/src/widgets/framework.dart:5803:5)
+#713    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#714    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#715    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#716    ProxyElement.update (package:flutter/src/widgets/framework.dart:5946:5)
+#717    _InheritedNotifierElement.update (package:flutter/src/widgets/inherited_notifier.dart:105:11)
+#718    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#719    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#720    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5780:11)
+#721    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#722    StatefulElement.update (package:flutter/src/widgets/framework.dart:5803:5)
+#723    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#724    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#725    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5780:11)
+#726    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#727    StatefulElement.update (package:flutter/src/widgets/framework.dart:5803:5)
+#728    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#729    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#730    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#731    ProxyElement.update (package:flutter/src/widgets/framework.dart:5946:5)
+#732    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#733    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#734    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5780:11)
+#735    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#736    StatefulElement.update (package:flutter/src/widgets/framework.dart:5803:5)
+#737    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#738    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#739    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#740    ProxyElement.update (package:flutter/src/widgets/framework.dart:5946:5)
+#741    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#742    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#743    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#744    ProxyElement.update (package:flutter/src/widgets/framework.dart:5946:5)
+#745    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#746    _RawViewElement._updateChild (package:flutter/src/widgets/view.dart:441:16)
+#747    _RawViewElement.update (package:flutter/src/widgets/view.dart:528:5)
+#748    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#749    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#750    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#751    StatelessElement.update (package:flutter/src/widgets/framework.dart:5693:5)
+#752    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#753    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#754    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5780:11)
+#755    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#756    StatefulElement.update (package:flutter/src/widgets/framework.dart:5803:5)
+#757    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#758    RootElement._rebuild (package:flutter/src/widgets/binding.dart:1605:16)
+#759    RootElement.update (package:flutter/src/widgets/binding.dart:1583:5)
+#760    RootElement.performRebuild (package:flutter/src/widgets/binding.dart:1597:7)
+#761    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#762    BuildScope._tryRebuild (package:flutter/src/widgets/framework.dart:2693:15)
+#763    BuildScope._flushDirtyElements (package:flutter/src/widgets/framework.dart:2752:11)
+#764    BuildOwner.buildScope (package:flutter/src/widgets/framework.dart:3048:18)
+#765    AutomatedTestWidgetsFlutterBinding.drawFrame (package:flutter_test/src/binding.dart:1433:19)
+#766    RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:468:5)
+#767    SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1397:15)
+#768    SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1318:9)
+#769    AutomatedTestWidgetsFlutterBinding.pump.<anonymous closure> (package:flutter_test/src/binding.dart:1288:9)
+#772    TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#773    AutomatedTestWidgetsFlutterBinding.pump (package:flutter_test/src/binding.dart:1275:27)
+#774    WidgetTester.pumpWidget.<anonymous closure> (package:flutter_test/src/widget_tester.dart:608:22)
+#777    TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#778    WidgetTester.pumpWidget (package:flutter_test/src/widget_tester.dart:605:27)
+#779    main.<anonymous closure> (file:///Users/ivan/gh/track_overflow/test/widget/placeholder_screen_test.dart:7:18)
+#780    testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:189:29)
+<asynchronous suspension>
+#781    TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1032:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 5 frames from dart:async and package:stack_trace)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _TextWidgetFinder:<Found 0 widgets with text "Welcome to TrackOverflow!": []>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///Users/ivan/gh/track_overflow/test/widget/placeholder_screen_test.dart:10:5)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:189:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1032:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///Users/ivan/gh/track_overflow/test/widget/placeholder_screen_test.dart line 10
+The test description was:
+  should display welcome message and buttons
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following message was thrown:
+Multiple exceptions (2) were detected during the running of the current test, and at least one was
+unexpected.
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+00:05 +8 -2: /Users/ivan/gh/track_overflow/test/widget/placeholder_screen_test.dart: should display welcome message and buttons [E]                                                                    
+  Test failed. See exception logs above.
+  The test description was: should display welcome message and buttons
+  
+
+To run this test again: /Users/ivan/flutter/bin/cache/dart-sdk/bin/dart test /Users/ivan/gh/track_overflow/test/widget/placeholder_screen_test.dart -p vm --plain-name 'should display welcome message and buttons'
+
+00:05 +8 -2: /Users/ivan/gh/track_overflow/test/integration/app_integration_test.dart: full app test                                                                                                   
+══╡ EXCEPTION CAUGHT BY WIDGETS LIBRARY ╞═══════════════════════════════════════════════════════════
+The following StateError was thrown building PlaceholderScreen(dirty):
+Bad state: GetIt: Object/factory with type PlaybackService is not registered inside GetIt.
+(Did you accidentally do GetIt sl=GetIt.instance(); instead of GetIt sl=GetIt.instance;
+Did you forget to register it?)
+
+The relevant error-causing widget was:
+  PlaceholderScreen PlaceholderScreen:file:///Users/ivan/gh/track_overflow/lib/main.dart:33:19
+
+When the exception was thrown, this was the stack:
+#0      throwIfNot (package:get_it/get_it_impl.dart:14:19)
+#1      _GetItImplementation._findFactoryByNameAndType (package:get_it/get_it_impl.dart:580:5)
+#2      _GetItImplementation.get (package:get_it/get_it_impl.dart:604:29)
+#3      _GetItImplementation.call (package:get_it/get_it_impl.dart:677:12)
+#4      PlaceholderScreen.build (package:track_overflow/main.dart:43:34)
+#5      StatelessElement.build (package:flutter/src/widgets/framework.dart:5687:49)
+#6      ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5617:15)
+#7      Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#8      ComponentElement._firstBuild (package:flutter/src/widgets/framework.dart:5599:5)
+#9      ComponentElement.mount (package:flutter/src/widgets/framework.dart:5593:5)
+...     Normal element mounting (228 frames)
+#237    Element.inflateWidget (package:flutter/src/widgets/framework.dart:4468:16)
+#238    MultiChildRenderObjectElement.inflateWidget (package:flutter/src/widgets/framework.dart:7035:36)
+#239    MultiChildRenderObjectElement.mount (package:flutter/src/widgets/framework.dart:7047:32)
+...     Normal element mounting (463 frames)
+#702    Element.inflateWidget (package:flutter/src/widgets/framework.dart:4468:16)
+#703    Element.updateChild (package:flutter/src/widgets/framework.dart:3957:20)
+#704    SingleChildRenderObjectElement.update (package:flutter/src/widgets/framework.dart:6907:14)
+#705    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#706    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#707    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#708    ProxyElement.update (package:flutter/src/widgets/framework.dart:5946:5)
+#709    _InheritedNotifierElement.update (package:flutter/src/widgets/inherited_notifier.dart:105:11)
+#710    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#711    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#712    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5780:11)
+#713    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#714    StatefulElement.update (package:flutter/src/widgets/framework.dart:5803:5)
+#715    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#716    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#717    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#718    ProxyElement.update (package:flutter/src/widgets/framework.dart:5946:5)
+#719    _InheritedNotifierElement.update (package:flutter/src/widgets/inherited_notifier.dart:105:11)
+#720    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#721    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#722    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5780:11)
+#723    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#724    StatefulElement.update (package:flutter/src/widgets/framework.dart:5803:5)
+#725    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#726    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#727    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5780:11)
+#728    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#729    StatefulElement.update (package:flutter/src/widgets/framework.dart:5803:5)
+#730    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#731    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#732    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#733    ProxyElement.update (package:flutter/src/widgets/framework.dart:5946:5)
+#734    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#735    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#736    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5780:11)
+#737    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#738    StatefulElement.update (package:flutter/src/widgets/framework.dart:5803:5)
+#739    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#740    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#741    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#742    ProxyElement.update (package:flutter/src/widgets/framework.dart:5946:5)
+#743    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#744    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#745    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#746    ProxyElement.update (package:flutter/src/widgets/framework.dart:5946:5)
+#747    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#748    _RawViewElement._updateChild (package:flutter/src/widgets/view.dart:441:16)
+#749    _RawViewElement.update (package:flutter/src/widgets/view.dart:528:5)
+#750    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#751    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#752    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#753    StatelessElement.update (package:flutter/src/widgets/framework.dart:5693:5)
+#754    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#755    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5642:16)
+#756    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5780:11)
+#757    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#758    StatefulElement.update (package:flutter/src/widgets/framework.dart:5803:5)
+#759    Element.updateChild (package:flutter/src/widgets/framework.dart:3941:15)
+#760    RootElement._rebuild (package:flutter/src/widgets/binding.dart:1605:16)
+#761    RootElement.update (package:flutter/src/widgets/binding.dart:1583:5)
+#762    RootElement.performRebuild (package:flutter/src/widgets/binding.dart:1597:7)
+#763    Element.rebuild (package:flutter/src/widgets/framework.dart:5333:7)
+#764    BuildScope._tryRebuild (package:flutter/src/widgets/framework.dart:2693:15)
+#765    BuildScope._flushDirtyElements (package:flutter/src/widgets/framework.dart:2752:11)
+#766    BuildOwner.buildScope (package:flutter/src/widgets/framework.dart:3048:18)
+#767    WidgetsBinding.drawFrame (package:flutter/src/widgets/binding.dart:1162:21)
+#768    RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:468:5)
+#769    SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1397:15)
+#770    SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1318:9)
+#771    LiveTestWidgetsFlutterBinding.handleDrawFrame (package:flutter_test/src/binding.dart:1804:13)
+#772    SchedulerBinding._handleDrawFrame (package:flutter/src/scheduler/binding.dart:1176:5)
+#776    _invoke (dart:ui/hooks.dart:314:10)
+#777    PlatformDispatcher._drawFrame (dart:ui/platform_dispatcher.dart:419:5)
+#778    _drawFrame (dart:ui/hooks.dart:283:31)
+(elided 3 frames from dart:async)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _TextWidgetFinder:<Found 0 widgets with text "Welcome to TrackOverflow!": []>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///Users/ivan/gh/track_overflow/test/integration/app_integration_test.dart:12:5)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:189:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1032:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///Users/ivan/gh/track_overflow/test/integration/app_integration_test.dart line 12
+The test description was:
+  full app test
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following message was thrown:
+Multiple exceptions (2) were detected during the running of the current test, and at least one was
+unexpected.
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+00:05 +8 -3: /Users/ivan/gh/track_overflow/test/integration/app_integration_test.dart: full app test [E]                                                                                               
+  Test failed. See exception logs above.
+  The test description was: full app test
+  
+
+To run this test again: /Users/ivan/flutter/bin/cache/dart-sdk/bin/dart test /Users/ivan/gh/track_overflow/test/integration/app_integration_test.dart -p vm --plain-name 'full app test'
+
+00:05 +8 -3: /Users/ivan/gh/track_overflow/test/integration/app_integration_test.dart: (tearDownAll)                                                                                                   
+00:05 +8 -3: /Users/ivan/gh/track_overflow/test/integration/app_integration_test.dart: (tearDownAll)                                                                                                   
+Warning: integration_test plugin was not detected.
+
+If you're running the tests with `flutter drive`, please make sure your tests
+are in the `integration_test/` directory of your package and use
+`flutter test $path_to_test` to run it instead.
+
+If you're running the tests with Android instrumentation or XCTest, this means
+that you are not capturing test results properly! See the following link for
+how to set up the integration_test plugin:
+
+https://docs.flutter.dev/testing/integration-tests
+
+
+00:05 +8 -3: Some tests failed.                                                                                                                                                                        
