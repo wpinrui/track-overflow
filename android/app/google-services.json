@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "39942384076",
+    "project_id": "track-overflow",
+    "storage_bucket": "track-overflow.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39942384076:android:b949159db9c48aeec29569",
+        "android_client_info": {
+          "package_name": "com.wpinrui.track_overflow"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMdyJrvLZ7AIBEU_TN_H7H9aoEOL77QBw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
