@@ -3,7 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:track_overflow/firebase_options.dart';
-import 'package:track_overflow/services/logger/destinations/firestore_logger.dart';
+import 'package:track_overflow/services/logger/destinations/firestore_log_destination.dart';
 
 import 'services/background_service.dart';
 import 'services/caching_service.dart';
