@@ -1,9 +1,14 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'services/playback_service.dart';
-import 'services/caching_service.dart';
+import 'package:track_overflow/firebase_options.dart';
+import 'package:track_overflow/services/logger/destinations/firestore_log_destination.dart';
+
 import 'services/background_service.dart';
-import 'services/error_handler_service.dart';
+import 'services/caching_service.dart';
+import 'services/logger/logger_service.dart';
+import 'services/playback_service.dart';
 
 final GetIt getIt = GetIt.instance;
 
@@ -14,10 +19,16 @@ Future<void> main() async {
 }
 
 Future<void> setupServices() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  final firestore = FirebaseFirestore.instance;
   getIt.registerLazySingleton<PlaybackService>(() => PlaybackService());
   getIt.registerLazySingleton<CachingService>(() => CachingService());
   getIt.registerLazySingleton<BackgroundService>(() => BackgroundService());
-  getIt.registerLazySingleton<ErrorHandlerService>(() => ErrorHandlerService());
+  getIt.registerLazySingleton<LoggerService>(() => LoggerService());
+  final firestoreLogger = FirestoreLogDestination(firestore);
+  getIt<LoggerService>().addDestination(firestoreLogger);
 }
 
 class TrackOverflowApp extends StatelessWidget {
@@ -43,7 +54,7 @@ class PlaceholderScreen extends StatelessWidget {
     final playbackService = getIt<PlaybackService>();
     final cachingService = getIt<CachingService>();
     final backgroundService = getIt<BackgroundService>();
-    final errorHandlerService = getIt<ErrorHandlerService>();
+    final loggerService = getIt<LoggerService>();
 
     return Scaffold(
       appBar: AppBar(
@@ -69,8 +80,11 @@ class PlaceholderScreen extends StatelessWidget {
               child: const Text("Test Background Service"),
             ),
             ElevatedButton(
-              onPressed: () => errorHandlerService.showErrorDialog(
-                  context, "This is a test error!"),
+              onPressed: () {
+                loggerService.logError("Hello World (of errors)!");
+                loggerService.logWarning("Hello World (of warnings)!");
+                loggerService.logInfo("Hello World (of info)!");
+              },
               child: const Text("Test Error Handling"),
             ),
           ],
