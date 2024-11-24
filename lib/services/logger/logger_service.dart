@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:track_overflow/services/logger/destinations/log_destination.dart';
 
 enum LogLevel {
@@ -42,21 +41,5 @@ class LoggerService {
 
   void logInfo(String message) {
     _log(LogLevel.info, message);
-  }
-
-  void showErrorDialog(BuildContext context, String message) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text("Error"),
-        content: Text(message),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: const Text("OK"),
-          ),
-        ],
-      ),
-    );
   }
 }

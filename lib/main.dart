@@ -81,7 +81,6 @@ class PlaceholderScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                loggerService.showErrorDialog(context, "This is a test error!");
                 loggerService.logError("Hello World (of errors)!");
                 loggerService.logWarning("Hello World (of warnings)!");
                 loggerService.logInfo("Hello World (of info)!");
