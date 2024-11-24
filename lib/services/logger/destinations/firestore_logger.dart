@@ -11,7 +11,8 @@ class FirestoreLogDestination implements LogDestination {
 
   @override
   Future<void> sendLog(LogLevel level, String message) async {
-    await _firestore.collection(kLogCollection).add({
+    final timestampId = DateTime.now().toUtc().toIso8601String();
+    await _firestore.collection(kLogCollection).doc(timestampId).set({
       'level': level.toString(),
       'message': message,
       'timestamp': DateTime.now().toIso8601String(),

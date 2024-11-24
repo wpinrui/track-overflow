@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:track_overflow/services/logger/destinations/log_destination.dart';
 
-enum LogLevel { info, warning, error }
+enum LogLevel {
+  info,
+  warning,
+  error;
 
-String logLevelToString(LogLevel level) {
-  switch (level) {
-    case LogLevel.info:
-      return "INFO";
-    case LogLevel.warning:
-      return "WARNING";
-    case LogLevel.error:
-      return "ERROR";
+  @override
+  String toString() {
+    switch (this) {
+      case LogLevel.info:
+        return "INFO";
+      case LogLevel.warning:
+        return "WARNING";
+      case LogLevel.error:
+        return "ERROR";
+    }
   }
 }
 

@@ -1,5 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:track_overflow/firebase_options.dart';
+import 'package:track_overflow/services/logger/destinations/firestore_logger.dart';
 
 import 'services/background_service.dart';
 import 'services/caching_service.dart';
@@ -15,10 +19,16 @@ Future<void> main() async {
 }
 
 Future<void> setupServices() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  final firestore = FirebaseFirestore.instance;
   getIt.registerLazySingleton<PlaybackService>(() => PlaybackService());
   getIt.registerLazySingleton<CachingService>(() => CachingService());
   getIt.registerLazySingleton<BackgroundService>(() => BackgroundService());
   getIt.registerLazySingleton<LoggerService>(() => LoggerService());
+  final firestoreLogger = FirestoreLogDestination(firestore);
+  getIt<LoggerService>().addDestination(firestoreLogger);
 }
 
 class TrackOverflowApp extends StatelessWidget {

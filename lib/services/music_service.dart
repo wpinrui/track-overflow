@@ -1,13 +1,11 @@
 import 'dart:io';
 
-import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:track_overflow/firebase_options.dart';
 
 class MusicService {
-  late FirebaseFirestore _firestore;
-  late FirebaseStorage _storage;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final FirebaseStorage _storage = FirebaseStorage.instance;
   static final MusicService _instance = MusicService._internal();
 
   factory MusicService() {
@@ -15,14 +13,6 @@ class MusicService {
   }
 
   MusicService._internal();
-
-  Future<void> _init() async {
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
-    _firestore = FirebaseFirestore.instance;
-    _storage = FirebaseStorage.instance;
-  }
 
   /// Fetch all music metadata from Firestore
   Future<List<Map<String, dynamic>>> fetchAllMusicMetadata() async {
