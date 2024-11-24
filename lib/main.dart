@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'services/playback_service.dart';
-import 'services/caching_service.dart';
+
 import 'services/background_service.dart';
-import 'services/error_handler_service.dart';
+import 'services/caching_service.dart';
+import 'services/logger/logger_service.dart';
+import 'services/playback_service.dart';
 
 final GetIt getIt = GetIt.instance;
 
@@ -17,7 +18,7 @@ Future<void> setupServices() async {
   getIt.registerLazySingleton<PlaybackService>(() => PlaybackService());
   getIt.registerLazySingleton<CachingService>(() => CachingService());
   getIt.registerLazySingleton<BackgroundService>(() => BackgroundService());
-  getIt.registerLazySingleton<ErrorHandlerService>(() => ErrorHandlerService());
+  getIt.registerLazySingleton<LoggerService>(() => LoggerService());
 }
 
 class TrackOverflowApp extends StatelessWidget {
@@ -43,7 +44,7 @@ class PlaceholderScreen extends StatelessWidget {
     final playbackService = getIt<PlaybackService>();
     final cachingService = getIt<CachingService>();
     final backgroundService = getIt<BackgroundService>();
-    final errorHandlerService = getIt<ErrorHandlerService>();
+    final loggerService = getIt<LoggerService>();
 
     return Scaffold(
       appBar: AppBar(
@@ -69,8 +70,12 @@ class PlaceholderScreen extends StatelessWidget {
               child: const Text("Test Background Service"),
             ),
             ElevatedButton(
-              onPressed: () => errorHandlerService.showErrorDialog(
-                  context, "This is a test error!"),
+              onPressed: () {
+                loggerService.showErrorDialog(context, "This is a test error!");
+                loggerService.logError("Hello World (of errors)!");
+                loggerService.logWarning("Hello World (of warnings)!");
+                loggerService.logInfo("Hello World (of info)!");
+              },
               child: const Text("Test Error Handling"),
             ),
           ],

@@ -6,13 +6,8 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:track_overflow/firebase_options.dart';
 
 class MusicService {
-  // Firestore instance
   late FirebaseFirestore _firestore;
-
-  // Firebase Storage instance
   late FirebaseStorage _storage;
-
-  // Singleton instance
   static final MusicService _instance = MusicService._internal();
 
   factory MusicService() {
@@ -21,14 +16,12 @@ class MusicService {
 
   MusicService._internal();
 
-  /// Initialize Firebase
-  Future<void> init() async {
+  Future<void> _init() async {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
     _firestore = FirebaseFirestore.instance;
     _storage = FirebaseStorage.instance;
-    print('Firebase initialized');
   }
 
   /// Fetch all music metadata from Firestore
